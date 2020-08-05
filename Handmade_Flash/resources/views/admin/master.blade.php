@@ -11,8 +11,7 @@
     
 </head>
 <body>
-<div class="container">
-
+<div class="container row">
     <!-- Left-menu -->
     @include('admin.leftMenu')
     
@@ -24,5 +23,6 @@
         </div>
     </div> <!-- col 9 -->
 </div>
+
 </body>
 </html>

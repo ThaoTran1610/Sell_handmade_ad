@@ -101,13 +101,13 @@ Route::group(['prefix' => 'admin/user/'], function () {
 	]);
 
 	Route::post('edit/{id}', [
-		'as' 	=> 'admin.user.postEditProduct',
+		'as' 	=> 'admin.user.postEditUser',
 		'uses' 	=> 'UserController@postEditUser'
 	]);
 
 	// Delete User
 	Route::get('delete/{id}', [
-		'as' 	=> 'getDeleteProduct',
+		'as' 	=> 'getDeleteUser',
 		'uses' 	=> 'UserController@getDeleteUser'
 	]);
 });	
@@ -140,6 +140,37 @@ Route::group(['prefix' => 'admin/slider/'], function () {
 	Route::get('delete/{id}', [
 		'as' 	=> 'getDeleteSlider',
 		'uses' 	=> 'SliderController@getDeleteSlider'
+	]);
+});	
+
+// Customer
+Route::group(['prefix' => 'admin/customer/'], function () {
+	Route::get('add',
+		['as' 	=> 'admin.customer.getAddCustomer',
+		'uses' 	=> 'CustomerController@getAddCustomer'
+    ]);
+	Route::post('postAdd',['as'=>'postAdd','uses'=>'CustomerController@postAddCustomer']);
+	
+	Route::get('list',
+		['as' 	=> 'admin.customer.getListCustomer',
+		'uses' 	=> 'CustomerController@getListCustomer'
+	]);
+
+	// Updated Customer
+	Route::get('edit/{id}', [
+		'as' 	=> 'admin.customer.getEditCustomer',
+		'uses' 	=> 'CustomerController@getEditCustomer'
+	]);
+
+	Route::post('edit/{id}', [
+		'as' 	=> 'admin.customer.postEditCustomer',
+		'uses' 	=> 'CustomerController@postEditCustomer'
+	]);
+
+	// Delete Customer
+	Route::get('delete/{id}', [
+		'as' 	=> 'getDeleteCustomer',
+		'uses' 	=> 'CustomerController@getDeleteCustomer'
 	]);
 });	
 
